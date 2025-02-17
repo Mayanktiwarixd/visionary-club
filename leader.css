@@ -1,0 +1,127 @@
+body {
+    background: linear-gradient(to right, #FF6B6B, #FFD166);
+
+}
+
+
+.projects {
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    background: #ff3c3c; /* Red Glowing Timeline */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 15px rgba(255, 60, 60, 0.8); /* Glow Effect */
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 30px; /* More Space Between Image & Text */
+    box-sizing: border-box;
+}
+
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item.right {
+    left: 50%;
+    text-align: left;
+}
+
+/* Glowing Image Effect & Button-like Interaction */
+.timeline-img {
+    display: inline-block;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+.timeline-img img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.timeline-img:hover {
+    transform: scale(1.05) rotateX(10deg) rotateY(10deg);
+    box-shadow: 0px 0px 20px rgba(255, 60, 60, 0.8); /* Red Glow */
+}
+
+.timeline-img img:hover {
+    transform: scale(1.05);
+}
+
+/* Popup Animation */
+.timeline-content {
+    background: #ffffff;
+    padding: 5px;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+}
+
+/* Project Titles */
+.project-title {
+    font-family: "Arial", sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    color: #000000;
+    text-align: center;
+    font-weight: bold;
+}
+
+.project-category {
+    font-size: 1.2rem;
+    color: #ff3c3c;
+    font-weight: lighter;
+}
+
+/* Tech Stack Tags */
+.project-tags span {
+    display: inline-block;
+    background: #eee;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin: 5px;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .timeline::after {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 40px;
+        text-align: left;
+    }
+
+    .timeline-item.right {
+        left: 0;
+    }
+}
